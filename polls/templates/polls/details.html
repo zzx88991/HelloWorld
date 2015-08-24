@@ -1,0 +1,27 @@
+
+<table>
+    <tr>
+        <td>Question text</td>
+        <td>Publish date</td>
+        <td>Recently published?</td>
+
+    </tr>
+    <tr>
+        <td>{{question.question_text}}</td>
+        <td>{{question.pub_date}}</td>
+        {% if question.was_published_recently %}
+            <td>Yes</td>
+        {% else %}
+            <td>No</td>
+        {% endif %}
+    </tr>
+
+    
+
+</table>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
